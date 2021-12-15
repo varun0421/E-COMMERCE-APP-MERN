@@ -29,7 +29,7 @@ export default function Login() {
         dispatch(loginUser(email, password))
     }
 
-    return token ? <Navigate to='/shop' /> : <Flex
+    return token ? <Navigate to='/' /> : <Flex
         minH={'100vh'}
         align={'center'}
         justify={'center'}

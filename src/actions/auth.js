@@ -1,11 +1,14 @@
-import axios from 'axios';
-import jwt from 'jsonwebtoken';
-import toast from 'react-hot-toast';
+import jwt from 'jsonwebtoken'
+import axios from 'axios'
+import { toast } from 'react-hot-toast'
+
 
 
 export const loginUser = (email, password) => async (dispatch) => {
-    const base_Url = 'http://localhost:8008'
+
     try {
+        const base_Url = 'http://localhost:8008'
+
         const res = await axios.post(`${base_Url}/api/v1/auth/login`, {
             email, password
         })
@@ -30,9 +33,12 @@ export const loginUser = (email, password) => async (dispatch) => {
     }
 };
 
+
 export const signupUser = (email, firstName, lastName, password) => async (dispatch) => {
-    const base_Url = 'http://localhost:8008'
+
     try {
+        const base_Url = 'http://localhost:8008'
+
         const res = await axios.post(`${base_Url}/api/v1/auth/signup`, {
             email, firstName, lastName, password
         })
