@@ -14,11 +14,10 @@ import {
     useColorModeValue,
     Link,
 } from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-import { Link as routerLink, useNavigate } from 'react-router-dom'
-import { signupUser } from '../../actions/auth';
-import { useDispatch, useSelector } from 'react-redux';
+import { Link as routerLink } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 export default function Signup() {
     const [showPassword, setShowPassword] = useState(false);
@@ -27,27 +26,13 @@ export default function Signup() {
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
 
-    const dispatch = useDispatch()
-
     const handleSignup = () => {
-        dispatch(signupUser(email, firstName, lastName, password))
+        const users = JSON.parse(localStorage.getItem('users')) ?? []
+        toast.success("SIGNUP SUCCESS")
+        localStorage.setItem('users', JSON.stringify([...users, {
+            firstName, lastName, email, password
+        }]))
     }
-
-
-    //check to redirect the user once it has signed up
-    const navigate = useNavigate()
-
-    const { signup } = useSelector(state => state.auth)
-    if (signup && signup === true) {
-        navigate('/login')
-    }
-
-
-    useEffect(() => {
-        return () => dispatch({
-            type: "REFRESH_SIGNUP"
-        })
-    }, [])
 
     return (
         <Flex
@@ -78,7 +63,7 @@ export default function Signup() {
                                 </FormControl>
                             </Box>
                             <Box>
-                                <FormControl id="lastName">
+                                <FormControl id="lastName" isRequired>
                                     <FormLabel>Last Name</FormLabel>
                                     <Input onChange={e => { setLastName(e.target.value) }} type="text" />
                                 </FormControl>

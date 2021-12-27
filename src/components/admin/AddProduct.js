@@ -13,6 +13,7 @@ import { useDispatch } from 'react-redux'
 import { addProduct } from '../../actions/product'
 
 
+
 const AddProduct = () => {
 
     const [name, setname] = useState('')
