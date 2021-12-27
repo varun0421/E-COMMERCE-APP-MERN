@@ -18,9 +18,10 @@ const initialState = {
             description: "Comfort. Day in, day out. Stretchable recycled yarn interwoven with silicone threads designed for ultra-comfort with no buckles or clasps.",
             actualPrice: "$50",
             listingPrice: "$39",
+            // TODO use id 
             category: "Watch band",
             compatibleWith: "Apple Watch 38mm, 40mm, 41mm",
-            color: 'Pomegranate',
+            color: 'Pomegrenate',
             imageUrl: 'https://cdn.shopify.com/s/files/1/0984/6842/products/Red-Fusion-38-40_1024x1024.jpg?v=1611006835',
             stock: 10,
         }, {
@@ -29,6 +30,7 @@ const initialState = {
             description: "Comfort. Day in, day out. Stretchable recycled yarn interwoven with silicone threads designed for ultra-comfort with no buckles or clasps.",
             actualPrice: "$50",
             listingPrice: "$39",
+            // TODO use id 
             category: "Watch band",
             compatibleWith: "Apple Watch 42mm, 44mm, 45mm",
             color: 'Orange',
@@ -41,6 +43,7 @@ const initialState = {
             description: "Comfort. Day in, day out. Stretchable recycled yarn interwoven with silicone threads designed for ultra-comfort with no buckles or clasps.",
             actualPrice: "$50",
             listingPrice: "$39",
+            // TODO use id 
             category: "Watch band",
             compatibleWith: "Apple Watch 42mm, 44mm, 45mm",
             color: 'Blue',
@@ -56,6 +59,7 @@ const initialState = {
 
             actualPrice: "$40",
             listingPrice: "$39",
+            // TODO use id 
             category: "iPhone Case",
             compatibleWith: "iPhone 12",
             color: 'Black',
@@ -68,6 +72,7 @@ const initialState = {
             stock: 5,
             actualPrice: "$40",
             listingPrice: "$39",
+            // TODO use id 
             category: "iPhone Case",
             compatibleWith: "iPhone 12",
             color: 'Orange',
